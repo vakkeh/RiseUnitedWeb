@@ -16,6 +16,18 @@
     height: 100vh;
 }
 
+#background-video {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
 .nav {
     width: 100%;
     height: 20%;
@@ -48,7 +60,8 @@
 }
 
 .pageSection {
-    min-height: 100vh;
+    /*min-height: 100vh;*/
+    padding-bottom: 5vh;
 }
 
 .section-separator {
@@ -269,4 +282,79 @@
 
 .serviceStep {
     text-align: right;
+}
+
+.services-carousel-wrapper {
+    margin: 5vh 0 10vh 0;
+}
+
+.services-carousel-wrapper p {
+    font-weight: 400;
+    font-stretch: 112.5%;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.swiper, .swiper2 {
+    margin-top: 10vh;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+}
+
+.swiper2 {
+    overflow: hidden;
+}
+
+.swiper-slide {
+    text-align: center;
+    /*top: 50%;
+    transform: translateY(-50%);*/
+}
+
+.swiper-slide-content {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.swiper-slide-content h3{
+    font-weight: 600;
+    font-stretch: 125%;
+    font-size: 4em;
+    padding-bottom: 3vh;
+}
+
+.swiper-slide-content p {
+    color: #424242;
+    width: 80%;
+    margin: 0 auto;
+    font-size: 1.3em;
+}
+
+.swiper-pagination {
+    margin-top: 10vh;
+    position: unset !important;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: #000 !important;
+}
+
+.swiper-button-prev, .swiper-button-next {
+    color: black !important;
+}
+
+.swiper-wrapper img {
+    height: auto;
+    width: 50%;
+}
+
+.contact-text h3 {
+    font-weight: 600;
+    font-stretch: 125%;
+    font-size: 4em;
+    padding-bottom: 4vh;
 }

@@ -11,12 +11,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62,400;100,100;100,200;100,300;100,400;100,500;100,600;100,700;100,800;100,900;112.5,400;125,400;125,600;125,700;125,900&display=swap" rel="stylesheet">
-
-    
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10.2.0/swiper-bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/swiper@10.2.0/swiper-bundle.min.css" rel="stylesheet">
 </head>
 <body>
     <div class="main">
         <div class="landing">
+            <video id="background-video" autoplay loop muted poster="https://assets.codepen.io/6093409/river.jpg">
+                <source src="res/videos/background.mp4" type="video/mp4">
+            </video>
             <div class="nav">
                 <div class="logo">
                     <h1>Rise United</h1>
@@ -142,6 +145,35 @@
                         We provide an analysis of direct competitors in the field.</p>
                     </div>
                 </div>
+                <div class="services-carousel-wrapper">
+                    <p>And much more...</p>
+                    <!-- Slider main container -->
+                    <div class="swiper">
+                        <!-- Additional required wrapper -->
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="swiper-slide-content">
+                                <h3>Proficiency in Instagram Strategies</h3>
+                                <p>This strategy involves authentically showcasing products or services
+                                    to their engaged followers. With our expertise, we can identify the
+                                    right strategy, create compelling campaigns, and amplify your brand's
+                                    visibility, engagement, and growth on Instagram.</p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">Slide 2</div>
+                            <div class="swiper-slide">Slide 3</div>
+                            <div class="swiper-slide">Slide 4</div>
+                            <div class="swiper-slide">Slide 5</div>
+                            <div class="swiper-slide">Slide 6</div>
+                            <div class="swiper-slide">Slide 7</div>
+                            <div class="swiper-slide">Slide 8</div>
+                            <div class="swiper-slide">Slide 9</div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="references-section pageSection">
@@ -150,9 +182,45 @@
                     <h2>REFERENCES</h2>
                 </div>
             </div>
-            <div class="section-content about">
-                <div class="about-text">
-                    <p>We are a team of designers and developers who create high quality website, graphic and print design. fr</p>
+            <div class="section-content references">
+                <div class="services-carousel-wrapper">
+                    <!-- Slider main container -->
+                    <div class="swiper2">
+                        <!-- Additional required wrapper -->
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="swiper-slide-content">
+                                    <img src="res/logos/bell_it.png">
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="swiper-slide-content">
+                                    <img src="res/logos/born_digital.png">
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="swiper-slide-content">
+                                    <img src="res/logos/boulevard.png">
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="swiper-slide-content">
+                                    <img src="res/logos/crocodille.png">
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="swiper-slide-content">
+                                    <img src="res/logos/ingram.png">
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="swiper-slide-content">
+                                    <img src="res/logos/telma.png">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -162,12 +230,58 @@
                     <h2>CONTACT</h2>
                 </div>
             </div>
-            <div class="section-content about">
-                <div class="about-text">
-                    <p>We are a team of designers and developers who create high quality website, graphic and print design. fr</p>
+            <div class="section-content contact">
+                <div class="contact-text">
+                    <h3>CONTACT US</h3>
                 </div>
             </div>
         </div>
     </div>
+    <script>
+        const swiper = new Swiper('.swiper', {
+        loop: true,
+        grabCursor: true,
+        // If we need pagination
+        pagination: {
+            el: '.swiper-pagination',
+        },
+
+        // Navigation arrows
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        }
+        });
+
+        var swiper2 = new Swiper(".swiper2", {
+            slidesPerView: 1,
+            loop: true,
+            grabCursor: true,
+            spaceBetween: 30,
+            centeredSlides: true,
+            autoplay: {
+                delay: 3500,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            breakpoints: {
+                640: {
+                slidesPerView: 1,
+                spaceBetween: 0,
+                },
+                768: {
+                slidesPerView: 2,
+                spaceBetween: 40,
+                },
+                1024: {
+                slidesPerView: 3,
+                spaceBetween: 50,
+                },
+            },
+        });
+    </script>
 </body>
 </html>
