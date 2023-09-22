@@ -13,13 +13,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62,400;100,100;100,200;100,300;100,400;100,500;100,600;100,700;100,800;100,900;112.5,400;125,400;125,600;125,700;125,900&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/swiper@10.2.0/swiper-bundle.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/swiper@10.2.0/swiper-bundle.min.css" rel="stylesheet">
+    <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
+    <script src="anime.min.js"></script>
+    <script src="blobs.js"></script>
 </head>
 <body>
+    <div class="background-animation-wrapper card">
+        <div class="blob"></div>
+    </div>
+    <div class="background-animation-overlay"></div>
     <div class="main">
         <div class="landing">
-            <video id="background-video" autoplay loop muted poster="https://assets.codepen.io/6093409/river.jpg">
-                <source src="res/videos/background.mp4" type="video/mp4">
-            </video>
             <div class="nav">
                 <div class="logo">
                     <h1>Rise United</h1>
@@ -36,7 +40,7 @@
                 </div>
             </div>
             <div class="landing-text">
-                <p>Step into a future of succes with our consulting expertise</p>
+                <p>Step into a future with our<span class="typed-text"></span><span class="cursor"></span></p>
             </div>
         </div>
         <div class="about-section pageSection">
@@ -90,7 +94,7 @@
             </div>
         </div>
         <div class="services-section pageSection">
-            <div class="section-separator">
+            <div class="services-separator section-separator">
                 <div class="section-separator-text">
                     <h2>SERVICES</h2>
                 </div>
@@ -173,6 +177,11 @@
                         <div class="swiper-button-prev"></div>
                         <div class="swiper-button-next"></div>
                     </div>
+                    <div class="services-additionals">
+                        <a href="#" class="services-cta-wrapper"><div class="cta button">
+                            <p>GET IN TOUCH</p>
+                        </div></a> 
+                    </div>
                 </div>
             </div>
         </div>
@@ -219,7 +228,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="swiper-pagination"></div>
+                        <!--<div class="swiper-pagination"></div>-->
                     </div>
                 </div>
             </div>
@@ -233,6 +242,26 @@
             <div class="section-content contact">
                 <div class="contact-text">
                     <h3>CONTACT US</h3>
+                    <p>and start your success story.</p>
+                </div>
+                <div class="contact-separator"></div>
+                <div class="contact-info">
+                    <div class="contact-info-details">
+                        <i class="lni lni-envelope"></i><p>info@riseunited.com</p><br>
+                    </div>
+                    <div class="contact-info-details">
+                        <i class="lni lni-phone"></i><p>+420 650 283 152</p><br>
+                    </div>
+                </div>
+                <div class="contact-form-wrapper">
+                    <p>or send us a message</p>
+                    <div class="contact-form">
+                        <form>
+                            <input placeholder="your@email.com" class="form-input form-email" type="email"><br><br>
+                            <textarea placeholder="Your message..." class="form-input form-text" type="text"></textarea><br><br>
+                            <input class="form-input form-submit" type="submit">
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
@@ -263,10 +292,10 @@
                 delay: 3500,
                 disableOnInteraction: false,
             },
-            pagination: {
+            /*pagination: {
                 el: ".swiper-pagination",
                 clickable: true,
-            },
+            },*/
             breakpoints: {
                 640: {
                 slidesPerView: 1,
@@ -282,6 +311,9 @@
                 },
             },
         });
+
+        genBlobs();
     </script>
+    <script src="typewriter.js"></script>
 </body>
 </html>

@@ -1,3 +1,7 @@
+body {
+    overflow-x: hidden;
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -6,34 +10,67 @@
 }
 
 .main {
-    width: 95vw;
+    width: 100vw;
     margin: 0 auto;
-    font-weight: ;
 }
 
 .landing {
-    width: 100%;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    width: 95vw;
+    margin: 0 auto;
     height: 100vh;
 }
 
-#background-video {
+.background-animation-overlay{
+    background: rgb(255,255,255);
+    background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 90%);
+    overflow: hidden;
+    display: block;
     width: 100vw;
     height: 100vh;
     object-fit: cover;
     position: absolute;
     left: 0;
-    right: 0;
     top: 0;
     bottom: 0;
     z-index: -1;
 }
 
+.card {
+    width: 100vw !important;
+	margin-left: 50% !important;
+	transform: translateX(-50%) !important;
+    overflow: hidden;
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -2;
+}
+
+.card > .blob {
+    overflow: hidden;
+    background: #85def2;
+    height: 25%;
+    width: 12.5%;
+    border-radius: 100%;
+    filter: blur(15px);
+    position: absolute;
+}
+
 .nav {
     width: 100%;
-    height: 20%;
 }
 
 .nav .logo {
+    font-weight: 600;
+    font-stretch: 125%;
     padding: 2em 0 0 0;
     float: left;
 }
@@ -43,24 +80,73 @@
     float: right;
 }
 
+.menu li a {
+    font-stretch: 125%;
+    font-weight: 400;
+    color: black;
+    font-size: 1.8em;
+    text-decoration: none;
+    transition: 0.1s ease-in-out;
+}
+
+.menu li a:hover {
+    color: blueviolet;
+    padding-right: 0.5vw;;
+    border-right: solid 3px black;
+}
+
+
 .nav .menu ul {
     list-style-type: none;
     text-align: right;
 }
 
 .landing-text {
-    height: 80%;
+    display: block;
+    margin: auto;
+    height: 100vh;
     text-align: center;
 }
 
 .landing-text p{
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    font-weight: 600;
+    font-stretch: 125%;
+    font-size: 3em;
     position: relative;
     top: 50%;
     transform: translateY(-50%);
 }
 
+.typed-text {
+    color: blueviolet;
+}
+
+.landing-text p span.cursor {
+    display: inline-block;
+    background-color: #000;
+    margin-left: 0.1rem;
+    width: 3px;
+    animation: blink 1s infinite;
+}
+.landing p span.cursor.typing {
+    animation: none;
+}
+
+@keyframes blink {
+    0%  { background-color: #000; }
+    49% { background-color: #000; }
+    50% { background-color: transparent; }
+    99% { background-color: transparent; }
+    100%  { background-color: #000; }
+}
+
 .pageSection {
     /*min-height: 100vh;*/
+    width: 95vw;
+    margin: 0 auto;
     padding-bottom: 5vh;
 }
 
@@ -102,6 +188,10 @@
     height: 80%;
 }
 
+.about-section {
+    padding-top: 5vh;
+}
+
 .about-text h3 {
     font-stretch: 125% !important;
     font-weight: 400;
@@ -127,11 +217,23 @@
 }
 
 .cta {
+    box-sizing: border-box;
     border-radius: 100px;
     width: 15vw;
     background-color: blueviolet;
     text-align: center;
     height: 5vh;
+    transition: 0.1s ease-in-out;
+}
+
+.cta:hover {
+    border: solid 3px blueviolet;
+    background-color: white;
+}
+
+.cta:hover > p {
+    font-weight: 400;
+    color: blueviolet;
 }
 
 .cta p {
@@ -150,6 +252,13 @@
 
 .floatRight {
     float: right;
+}
+
+.team-section {
+    background-image: linear-gradient(180deg, rgba(255,255,255,1) 10%, rgba(255,255,255,0) 50%, rgba(255,255,255,1) 90%), url(res/backgrounds/2.jpg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .team-member {
@@ -205,6 +314,24 @@
     float: right;
     text-align: right;
 
+}
+
+.services-section {
+    width: 100vw;
+    background-image: linear-gradient(180deg, rgba(255,255,255,1) 10%, rgba(255,255,255,0) 50%, rgba(255,255,255,1) 90%), url(res/backgrounds/1-faded.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.services-separator {
+    width: 95vw !important;
+    margin: 0 auto;
+}
+
+.services {
+    width: 95vw;
+    margin: 0 auto;
 }
 
 .service-wrapper {
@@ -270,7 +397,7 @@
 .service h3 {
     font-weight: 600;
     font-stretch: 125%;
-    font-size: 4em;
+    font-size: 3em;
     padding-bottom: 4vh;
 }
 
@@ -323,7 +450,7 @@
 .swiper-slide-content h3{
     font-weight: 600;
     font-stretch: 125%;
-    font-size: 4em;
+    font-size: 3em;
     padding-bottom: 3vh;
 }
 
@@ -352,9 +479,121 @@
     width: 50%;
 }
 
+.services-additionals {
+    padding: 7vh 0 0 0;
+}
+
+.services-cta-wrapper {
+    text-decoration: none;
+}
+
+.services-cta-wrapper .cta {
+    font-size: 0.8vw;
+    margin: 0 auto;
+}
+
+.contact-section {
+    padding-bottom: 10vh;
+}
+
 .contact-text h3 {
+    padding-top: 3vh;
     font-weight: 600;
     font-stretch: 125%;
-    font-size: 4em;
-    padding-bottom: 4vh;
+    font-size: 2em;
+    padding-bottom: 1vh;
+}
+
+.contact-text p {
+    font-weight: 400;
+    font-stretch: 125%;
+    font-size: 1.3em;
+    padding-bottom: 3vh;
+}
+
+.contact-separator {
+    height: 0.3vh;
+    width: 10vw;
+    background-color: #000;
+}
+
+.contact-info {
+    padding-top: 2vh;
+    font-size: 2em;
+}
+
+.contact-info-details {
+    padding-top: 1vh;
+}
+
+.contact-info-details i, .contact-info-details p {
+    float: left;
+}
+
+.contact-info-details p {
+    padding: 0.8vh 0 0 2vw;
+    font-size: 0.6em;
+    font-weight: 400;
+    font-stretch: 125%;
+}
+
+.contact-form-wrapper {
+    padding-top: 5vh;
+}
+
+.contact-form-wrapper p {
+    font-weight: 400;
+    font-stretch: 125%;
+}
+
+.contact-form {
+    font-weight: 400;
+    font-stretch: 125%;
+    min-height: 20vh;
+    width: 40vw;
+    display: block;
+    padding-top: 5vh;
+}
+
+.form-email {
+    font-weight: 400;
+    font-stretch: 125%;
+    box-sizing: border-box;
+    padding-left: 1vw;
+    font-size: 1.6em;
+    width: 100%;
+    height: 8vh;
+}
+
+.form-text {
+    resize: vertical;
+    padding: 2vh 1vw 0 1vw;
+    box-sizing: border-box;
+    font-weight: 400;
+    font-stretch: 125%;
+    font-size: 1.6em;
+    width: 100%;
+    height: 30vh;
+}
+
+.form-submit {
+    font-weight: 600;
+    box-sizing: border-box;
+    font-stretch: 125%;
+    cursor: pointer;
+    color:white;
+    border-radius: 100px;
+    border: none;
+    background-color: blueviolet;
+    height: 6vh;
+    width: 10vw;
+    float: right;
+    transition: 0.1s ease-in-out;
+}
+
+.form-submit:hover {
+    font-weight: 600;
+    border: 3px solid blueviolet;
+    background-color: white;
+    color: blueviolet;
 }
